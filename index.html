@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7f3">
+  <meta name="description" content="Compare your resume with a job description and find the keywords that stand out or are missing.">
+  <title>SkillMatch — Resume keyword checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="SkillMatch home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>skill<span class="brand-accent">match</span></span>
+      </a>
+      <span class="privacy-note"><span class="privacy-dot" aria-hidden="true"></span> Private by design</span>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT ROLE, IN FOCUS</p>
+        <h1 id="page-title">Make your experience<br><span>easy to find.</span></h1>
+        <p class="intro-copy">Compare your resume with a job description. See which important words already show up, and which ones you may want to add.</p>
+      </section>
+
+      <section class="workspace" aria-label="Resume and job description analyzer">
+        <div class="input-grid">
+          <div class="input-panel">
+            <div class="field-heading">
+              <label for="resume-text"><span class="step-number">01</span> Your resume</label>
+              <span class="field-hint">Paste your resume text</span>
+            </div>
+            <textarea id="resume-text" placeholder="Paste your resume here...\n\nInclude your experience, skills, and education for a more useful comparison." spellcheck="false"></textarea>
+            <div class="field-footer"><span id="resume-count">0 words</span><span>Only the text you paste is analyzed</span></div>
+          </div>
+
+          <div class="input-panel">
+            <div class="field-heading">
+              <label for="job-text"><span class="step-number">02</span> Job description</label>
+              <span class="field-hint">Paste the role you want</span>
+            </div>
+            <textarea id="job-text" placeholder="Paste the job description here...\n\nResponsibilities and requirements help us find the most relevant keywords." spellcheck="false"></textarea>
+            <div class="field-footer"><span id="job-count">0 words</span><span>Analysis stays in your browser</span></div>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <p class="form-message" id="form-message" role="status" aria-live="polite">Your text stays on this device. Nothing is uploaded.</p>
+          <div class="action-buttons">
+            <button class="button button-quiet" id="sample-button" type="button">
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M4 3.5h8l4 4v9H4v-13Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 3.5v4h4M7 11h6M7 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Try sample
+            </button>
+            <button class="button button-quiet" id="clear-button" type="button">
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M4 5.5h12M8 5.5V4h4v1.5m2.5 0-.7 10H6.2l-.7-10M8.5 8.5v4.5m3-4.5v4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Clear
+            </button>
+            <button class="button button-primary" id="analyze-button" type="button">
+              Analyze match
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <section class="results" id="results" aria-labelledby="results-title" aria-live="polite">
+          <div class="results-topline">
+            <div>
+              <p class="eyebrow results-eyebrow"><span class="eyebrow-line"></span> YOUR ANALYSIS</p>
+              <h2 id="results-title">Keyword match</h2>
+            </div>
+            <span class="result-state" id="result-state">READY WHEN YOU ARE</span>
+          </div>
+
+          <div class="results-content" id="results-content">
+            <div class="empty-result">
+              <div class="empty-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none"><circle cx="21" cy="21" r="12" stroke="currentColor" stroke-width="2"/><path d="m30 30 9 9M15 21h12m-6-6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <h3>Your results will appear here</h3>
+                <p>Add both texts above, then select <strong>Analyze match</strong> to see your keyword overlap.</p>
+              </div>
+            </div>
+          </div>
+          <p class="method-note">A simple keyword check, not a hiring score. Similar meanings and context may not be recognized.</p>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer"><span>SkillMatch</span><span>Made for a clearer next step.</span></footer>
+  </div>
+</body>
+</html>
